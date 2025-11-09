@@ -1,6 +1,6 @@
 # 🧠 Sentiment Analysis Web App
 
-![Project Banner](assets/Screenshot 2025-11-09 172019.png)
+[Project Banner](assets/Screenshot 2025-11-09 172019.png)
 
 A Flask-based **Sentiment Analysis** project that uses **three powerful NLP models** —  
 **VADER**, **Hugging Face (DistilBERT)**, and **Scikit-learn (Logistic Regression)** —  
