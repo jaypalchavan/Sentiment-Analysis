@@ -35,3 +35,4 @@ pip install -r requirements.txt
 Jaypal Dinesh Chavan
 Cybersecurity & AI Enthusiast
 📧 jaypalchavan1230@gmail.com
+Linkedin: https://www.linkedin.com/in/jaypal-chavan
