@@ -1,0 +1,116 @@
+body {
+    background-color: #282c34;
+    color: white;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    min-height: 100vh;
+}
+
+.container {
+    width: 100%;
+    max-width: 600px;
+    text-align: center;
+}
+
+header h1 {
+    color: #61dafb; /* React Blue */
+    font-size: 2.5rem;
+}
+
+p{
+    font-size: 1.5rem;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    background: #3a3f4b;
+    padding: 25px;
+    border-radius: 8px;
+    border: 1px solid #4a4f5b;
+}
+
+label {
+    text-align: left;
+    font-weight: bold;
+    font-size: 0.9rem;
+    color: #ccc;
+}
+
+textarea, select {
+    width: 100%;
+    padding: 10px;
+    border-radius: 8px;
+    border: none;
+    font-size: 16px;
+    font-family: monospace;
+    background-color: #f0f0f0;
+    box-sizing: border-box; /* Important for padding to work nicely */
+}
+
+button {
+    background-color: #61dafb;
+    color: #282c34;
+    font-weight: bold;
+    font-size: 18px;
+    border: none;
+    border-radius: 8px;
+    padding: 12px 20px;
+    margin-top: 10px;
+    cursor: pointer;
+    transition: transform 0.2s ease, background-color 0.2s;
+}
+
+button:hover {
+    transform: scale(1.03);
+    background-color: #72e2ff;
+}
+
+.result-box {
+    margin-top: 30px;
+    padding: 20px;
+    border-radius: 8px;
+    border: 2px solid #fff;
+}
+
+.result-box h2 {
+    margin-top: 0;
+    color: #fff;
+}
+
+.result-box .label {
+    font-size: 2rem;
+    font-weight: bold;
+    margin: 10px 0;
+}
+
+.result-box .score {
+    font-size: 1.2rem;
+    font-family: monospace;
+}
+
+/* Dynamic classes for the result */
+.result-box.POSITIVE {
+    background-color: #2a9d8f;
+    border-color: #264653;
+}
+
+.result-box.NEGATIVE {
+    background-color: #e76f51;
+    border-color: #f4a261;
+}
+
+.result-box.NEUTRAL {
+    background-color: #888;
+    border-color: #555;
+}
+
+.result-box.ERROR {
+    background-color: #c1121f;
+    border-color: #fec6c6;
+}

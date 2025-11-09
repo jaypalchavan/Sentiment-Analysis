@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sentiment Analyzer</title>
+    <!-- Link our CSS file from the 'static' folder -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Sentiment Analyzer</h1>
+            <p>Enter text to analyze.</p>
+        </header>
+
+        <form method="POST" action="/">
+            
+            <label for="text">Enter your text:</label>
+            <textarea id="text" name="text" rows="6" placeholder="This movie was...">{{ original_text }}</textarea>
+
+            <label for="model_choice">Choose a model:</label>
+            <select id="model_choice" name="model_choice">
+                <!-- We use Jinja to re-select the user's last choice -->
+                <option value="hf" {% if selected_model == 'hf' %}selected{% endif %}>
+                    Hugging Face (Modern, Best)
+                </option>
+                <option value="sklearn" {% if selected_model == 'sklearn' %}selected{% endif %}>
+                    Scikit-learn (Classic ML, Custom-Trained)
+                </option>
+                <option value="vader" {% if selected_model == 'vader' %}selected{% endif %}>
+                    VADER (Fast, Rule-Based)
+                </option>
+            </select>
+
+            <button type="submit">Analyze Text</button>
+        
+        </form>
+
+        <!-- 
+          This is the result block.
+          It only appears if the 'result' variable exists
+          (i.e., after the form is submitted).
+        -->
+        {% if result %}
+            <!-- Add a CSS class based on the result label -->
+            <div class="result-box {{ result.label }}">
+                <h2>Result</h2>
+                <p class="label"><strong>{{ result.label }}</strong></p>
+                <p class="score">{{ result.score }}</p>
+            </div>
+        {% endif %}
+
+    </div>
+</body>
+</html>
